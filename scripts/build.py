@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 TODAY = date.today().isoformat()
 # Production canonical / sitemap origin. Override with SITE_URL= for a local-only build.
-SITE_URL = os.environ.get("SITE_URL", "https://melscoop.github.io/opencopack")
+SITE_URL = os.environ.get("SITE_URL", "https://opencopack.com")
 REPO_URL = os.environ.get("REPO_URL", "https://github.com/melscoop/opencopack")
 CLAIM_ISSUE_URL = f"{REPO_URL.rstrip('/')}/issues/new?template=claim.yml"
 
@@ -425,6 +425,7 @@ def build() -> None:
     # robots + sitemap
     write(DIST / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {canon('sitemap.xml')}\n")
     (DIST / ".nojekyll").write_text("")
+    write(DIST / "CNAME", "opencopack.com")
     urls = [""]
     urls += [f"plants/{p['slug']}/" for p in listings]
     urls += ["states/", "processes/", "guides/", "about/", "claim/", "sources/"]

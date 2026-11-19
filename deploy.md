@@ -1,10 +1,15 @@
 # Deploying OpenCopack
 
-- Live site: https://melscoop.github.io/opencopack/
+- Live site: https://opencopack.com/
+- www: https://www.opencopack.com/ (CNAME to `melscoop.github.io`)
+- Previous GitHub Pages URL: https://melscoop.github.io/opencopack/ (GitHub usually redirects this to the custom domain once Pages is configured)
 - Repository: https://github.com/melscoop/opencopack
 - GitHub account used: `melscoop`, via the box `gh` CLI (`gh auth setup-git` for the local credential helper)
+- DNS: Cloudflare zone `opencopack.com`. Apex A/AAAA records point at GitHub Pages IPs and are DNS-only (not proxied) so GitHub can issue the HTTPS certificate. `www` is a DNS-only CNAME to `melscoop.github.io`.
 
-Pages is enabled on this repo with `build_type=workflow`. A push to `main` runs `.github/workflows/pages.yml`, which rebuilds the site with `SITE_URL=https://melscoop.github.io/opencopack` and deploys it. The same workflow also publishes an orphan `gh-pages` branch from `dist/` (including `.nojekyll`) as a fallback. Prefer the Actions path.
+Pages is enabled on this repo with `build_type=workflow` and custom domain `opencopack.com`. A push to `main` runs `.github/workflows/pages.yml`, which rebuilds the site with `SITE_URL=https://opencopack.com` and deploys it. The build also writes a `CNAME` file (`opencopack.com`) and `.nojekyll` into `dist/`. The same workflow also publishes an orphan `gh-pages` branch from `dist/` as a fallback. Prefer the Actions path.
+
+The default `SITE_URL` in `scripts/build.py` is `https://opencopack.com`, so a local `./nightly.sh` or `scripts/build.py` run (with no `SITE_URL` override) produces the same canonicals and sitemap as production.
 
 ## What a nightly run changes locally
 
@@ -14,7 +19,7 @@ Each run:
 
 1. Takes the next item in `data/queue.json` whose `status` is `queued`.
 2. Writes the pre-written guide to `src/guides/<slug>.json` and marks the queue item `published`.
-3. Rebuilds the static site with `scripts/build.py` (default `SITE_URL` is `https://melscoop.github.io/opencopack`).
+3. Rebuilds the static site with `scripts/build.py` (default `SITE_URL` is `https://opencopack.com`).
 4. Appends a line to `logs/nightly.log`.
 
 It does not invent company facts, and it does not push to GitHub by itself.
@@ -47,21 +52,25 @@ A push to `main` triggers the Pages workflow. You do not need to upload `dist/` 
 If the Actions deploy fails, the `gh-pages` branch is the fallback (the workflow updates it when it can). Pages can be pointed at `gh-pages` / root for this repo only, for example:
 
 ```sh
-gh api -X PUT repos/melscoop/opencopack/pages -f build_type=legacy -f source[branch]=gh-pages -f source[path]=/
+gh api -X PUT repos/melscoop/opencopack/pages -f build_type=legacy -f source[branch]=gh-pages -f source[path]=/ -f cname='opencopack.com'
 ```
 
 Prefer leaving `build_type=workflow` unless that path is broken.
 
 Then verify these return HTTP 200 and contain expected titles:
 
-- https://melscoop.github.io/opencopack/
-- https://melscoop.github.io/opencopack/guides/<slug>/
-- one listing URL under https://melscoop.github.io/opencopack/plants/
+- https://opencopack.com/
+- https://opencopack.com/guides/<slug>/
+- one listing URL under https://opencopack.com/plants/
 
-If a later deploy fails because Pages was turned off, turn it back on for this repo only:
+If a later deploy fails because Pages was turned off, turn it back on for this repo only, keeping the custom domain:
 
 ```sh
-gh api -X POST repos/melscoop/opencopack/pages -f build_type=workflow
+gh api -X POST repos/melscoop/opencopack/pages -f build_type=workflow -f cname='opencopack.com'
 ```
 
-(Use `PUT` with the same field if the Pages site already exists.)
+(Use `PUT` with the same fields if the Pages site already exists.) Once GitHub has issued the custom-domain certificate, keep HTTPS enforced:
+
+```sh
+gh api -X PUT repos/melscoop/opencopack/pages -f build_type=workflow -f cname='opencopack.com' -F https_enforced=true
+```
