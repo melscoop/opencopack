@@ -177,7 +177,7 @@
       "title": "What to bring to a co-packer visit",
       "kicker": "Outreach",
       "description": "A simple visit list: product, paperwork, and the questions official checklists already tell founders to ask.",
-      "body": "<p>If a plant invites you to walk the floor, go. Official checklists from state directories emphasize seeing whether the facility looks maintained, whether quality procedures are actually followed, and whether you would be allowed on site during a run.</p>\n<p>Bring:</p><ul><li>The one-page brief from <a href=\"../how-to-brief-a-copacker/\">how to brief a co-packer</a>.</li><li>Samples, a draft label, and any process-authority letter.</li><li>A short list of allergens and certifications you must have.</li><li>Questions about confidentiality, who buys ingredients, and what happens if the plant is sold or loses a large client \u2014 all of which appear on the Utah official question list.</li></ul>\n<p>Take notes the same day. Memory of a noisy production floor fades quickly.</p>",
+      "body": "<p>If a plant invites you to walk the floor, go. Official checklists from state directories emphasize seeing whether the facility looks maintained, whether quality procedures are actually followed, and whether you would be allowed on site during a run.</p>\n<p>Bring:</p><ul><li>The one-page brief from <a href=\"../how-to-brief-a-copacker/\">how to brief a co-packer</a>.</li><li>Samples, a draft label (including a nutrition facts panel and ingredient list, if you have them), and any process-authority letter. <a href=\"https://www.recipal.com?via=melanie\" rel=\"sponsored noopener\" target=\"_blank\">ReciPal</a> is one way to generate an FDA nutrition facts label and ingredient list from your recipe; OpenCopack may earn a commission if you sign up through this link.</li><li>A short list of allergens and certifications you must have.</li><li>Questions about confidentiality, who buys ingredients, and what happens if the plant is sold or loses a large client \u2014 all of which appear on the Utah official question list.</li></ul>\n<p>Take notes the same day. Memory of a noisy production floor fades quickly.</p>",
       "status": "queued",
       "published_on": null
     },
@@ -298,6 +298,16 @@
       "kicker": "Process",
       "description": "Why some listings mention capsules, gummies, or skincare, and how we decided they still belong.",
       "body": "<p>OpenCopack is a food and beverage directory, but official lists \u2014 especially Utah\u2019s \u2014 include plants that also pack dietary supplements, stick packs, or even skincare. We included a plant if the official food-and-agriculture directory listed it as a co-packer and it also handles food, beverages, or supplements. We did not create a skincare-only category.</p>\n<p>If you need a supplement contract manufacturer, read the source carefully: a gummy line and a hot-fill sauce line are not the same. The <a href=\"../../processes/supplements/\">supplements</a> hub collects listings whose sources mentioned that work.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 31,
+      "slug": "nutrition-labels-and-recipe-costing-before-you-call",
+      "title": "Nutrition labels and recipe costing before you call a co-packer",
+      "kicker": "Outreach",
+      "description": "Why a draft nutrition facts panel, ingredient list, and recipe cost help a plant quote you, and how to prepare them.",
+      "body": "<p>A co-packer can often say yes or no from a short brief, but a quote usually needs more than a flavor description. Plants often ask for a draft nutrition facts label, an ingredient list that flags allergens, and enough cost detail to talk about a unit price. Having those ready \u2014 even as drafts you expect to revise \u2014 saves a round of email.</p>\n<p>You can get a nutrition facts panel from a lab, a dietitian, or software that calculates one from a recipe. One such tool is <a href=\"https://www.recipal.com?via=melanie\" rel=\"sponsored noopener\" target=\"_blank\">ReciPal</a>, which generates FDA and CFIA nutrition facts labels and ingredient lists from a recipe, with options to download a print-ready PDF or PNG. It also supports recipe costing that can include food, packaging, labor, and overhead. OpenCopack may earn a commission if you sign up through this link. ReciPal is not the only option, and a label you generate still needs to match the formula the plant will actually run.</p>\n<p>Bring the draft panel and ingredient list with the one-page brief described in <a href=\"../how-to-brief-a-copacker/\">how to brief a co-packer</a>. Confirm final labeling with the plant and, where required, a process authority.</p>",
       "status": "queued",
       "published_on": null
     }

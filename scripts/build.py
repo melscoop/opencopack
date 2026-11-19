@@ -359,6 +359,7 @@ def build() -> None:
     <h2>This first release</h2>
     <p>The seed directory was compiled on {generated} from the Colorado Department of Agriculture Co-Pack Directory, the Utah Department of Agriculture and Food Co-Packer Directory, a curated subset of the Minnesota Department of Agriculture Co-Packer Directory, and company websites for plants in Oklahoma, Rhode Island, and South Dakota. Wyoming and Washington, D.C. remain empty because we could not verify a public co-packing offer there in this pass.</p>
     <p>OpenCopack is not affiliated with Co-Packer Match, PartnerSlate, Specialty Food Co-Packers, or any listed company.</p>
+    <p>Some guides include affiliate links to tools that can help with nutrition labels or recipe costing. OpenCopack may earn a commission if you sign up through those links. Co-packer listings are not paid placements.</p>
     """
     write(DIST / "about" / "index.html", jinja.get_template("simple.html").render(
         title="About OpenCopack",
@@ -411,7 +412,7 @@ def build() -> None:
       <li>Endorse a plant or guarantee open capacity.</li>
     </ul>
     <h2>Disclaimer</h2>
-    <p>OpenCopack is an informational directory. Listings can go stale the day after we copy them. Food safety, labeling, cottage-food rules, and inspection requirements vary by product and state. Talk to the plant and, where required, a process authority before you produce anything. Links to company sites are provided for verification and are not paid placements in this release.</p>
+    <p>OpenCopack is an informational directory. Listings can go stale the day after we copy them. Food safety, labeling, cottage-food rules, and inspection requirements vary by product and state. Talk to the plant and, where required, a process authority before you produce anything. Links to plant and official-directory sites are provided for verification and are not paid placements. Some guides include affiliate links to tools; those are disclosed on the page, and OpenCopack may earn a commission if you sign up through them.</p>
     """
     write(DIST / "sources" / "index.html", jinja.get_template("simple.html").render(
         title="Sources and disclaimer — OpenCopack",
