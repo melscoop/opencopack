@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">A public, sourced directory</p>
+    <h1>Find a co-packer who might actually take your run.</h1>
+    <p class="lede">OpenCopack lists U.S. food and beverage contract manufacturers compiled from state agriculture directories and company websites. If a plant did not publish a minimum, a certification, or a process, we leave it blank rather than guess.</p>
+    <ul class="stats">
+      <li><strong>{{ listings|length }}</strong> <span>verified listings</span></li>
+      <li><strong>{{ state_count }}</strong> <span>states in this seed</span></li>
+      <li><strong>{{ moq_count }}</strong> <span>with a published minimum</span></li>
+    </ul>
+  </div>
+</section>
+<div class="wrap">
+  <form class="filter-bar" id="filters" role="search" onsubmit="return false;">
+    <div class="filter-grid">
+      <label class="fld">Search
+        <input type="search" id="q" name="q" placeholder="Name, city, sauce, pouch, organic…">
+      </label>
+      <label class="fld">State
+        <select id="state" name="state">
+          <option value="">All states</option>
+          {% for st in states %}
+          <option value="{{ st.abbr|lower }}">{{ st.name }} ({{ st.count }})</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label class="fld">Process / category
+        <select id="category" name="category">
+          <option value="">All categories</option>
+          {% for cat in categories %}
+          <option value="{{ cat.slug }}">{{ cat.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label class="fld">Certification mentioned
+        <select id="cert" name="cert">
+          <option value="">Any / not specified</option>
+          {% for cert in certifications %}
+          <option value="{{ cert }}">{{ cert }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
+    <div class="toggles">
+      <label><input type="checkbox" id="moq" name="moq"> Only plants that published a minimum</label>
+      <label><input type="checkbox" id="startup" name="startup"> Mentioned startups, small runs, or no minimum</label>
+    </div>
+  </form>
+  <p class="count-line" id="count">{{ listings|length }} plants in the directory</p>
+  <div class="grid" id="results">
+    {% for p in listings %}
+    <a class="card" data-card href="{{ root }}plants/{{ p.slug }}/"
+       data-state="{{ p.state_abbr|lower }}"
+       data-cats="{{ p.categories|join(' ') }}"
+       data-certs="{{ p.certifications|join('|') }}"
+       data-moq="{{ 1 if p.moq_published else 0 }}"
+       data-start="{{ 1 if p.startup_friendly else 0 }}"
+       data-hay="{{ (p.name ~ ' ' ~ p.city ~ ' ' ~ p.state ~ ' ' ~ p.product_types ~ ' ' ~ p.notes ~ ' ' ~ p.processes|join(' ') ~ ' ' ~ p.certifications|join(' '))|lower|e }}">
+      <h2>{{ p.name }}</h2>
+      <p class="meta">{{ p.city }}, {{ p.state_abbr }}</p>
+      {% if p.product_types %}<p class="meta">{{ p.product_types[:140] }}{% if p.product_types|length > 140 %}…{% endif %}</p>{% endif %}
+      <div class="chips">
+        {% for c in p.categories[:3] %}<span class="chip">{{ category_names[c] }}</span>{% endfor %}
+        {% if p.moq_published %}<span class="chip moq">Min. published</span>{% endif %}
+        {% if p.startup_friendly %}<span class="chip start">Small-run language</span>{% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="disclaimer">Seed data retrieved {{ generated }}. See <a href="{{ root }}sources/">how listings are sourced</a>. This first release emphasizes Colorado, Minnesota, Utah, and states that a competing directory had left thin (Oklahoma, Rhode Island, South Dakota). Wyoming and Washington, D.C. are still empty here because we could not yet verify a plant that publicly offers co-packing.</p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>window.OPENCOPACK_LISTINGS = {{ {"total": listings|length} | tojson }};</script>
+<script src="{{ root }}static/app.js"></script>
+{% endblock %}

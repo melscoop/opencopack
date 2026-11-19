@@ -1,0 +1,41 @@
+name: Add or claim a plant
+description: Ask to add a co-packer listing or correct an existing page
+title: "Add or claim a plant: "
+labels: ["listing"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We only publish capabilities, minimums, certifications, and contacts that already appear on a public page or that you confirm in writing. Nothing is billed, and there is no paid placement.
+  - type: input
+    id: plant_name
+    attributes:
+      label: Plant name
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: City and state
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Website URL that states you offer co-packing
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: contact_name
+    attributes:
+      label: Your name and role
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should we add or correct?
+      description: Published minimum, processes, certifications, address corrections, or a new listing.
+    validations:
+      required: true

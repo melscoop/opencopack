@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page">
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ root }}">Directory</a> · <a href="{{ root }}{{ kind }}/">{{ kind_label }}</a></p>
+    <header class="page-head">
+      <p class="kicker">{{ kind_label }}</p>
+      <h1>{{ heading }}</h1>
+      <p class="lede">{{ lede }}</p>
+    </header>
+    {% if listings %}
+    <p class="count-line">{{ listings|length }} plant{{ 's' if listings|length != 1 else '' }} in this view.</p>
+    <div class="grid">
+      {% for p in listings %}
+      <a class="card" href="{{ root }}plants/{{ p.slug }}/">
+        <h2>{{ p.name }}</h2>
+        <p class="meta">{{ p.city }}, {{ p.state_abbr }}</p>
+        {% if p.product_types %}<p class="meta">{{ p.product_types[:140] }}{% if p.product_types|length > 140 %}…{% endif %}</p>{% endif %}
+        <div class="chips">
+          {% if p.moq_published %}<span class="chip moq">Min. published</span>{% endif %}
+          {% if p.startup_friendly %}<span class="chip start">Small-run language</span>{% endif %}
+          {% for c in p.certifications[:2] %}<span class="chip cert">{{ c }}</span>{% endfor %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty">
+      <h2>No verified listing yet</h2>
+      <p>We looked for a public co-packing offer in this view and have not yet verified one. If you operate a plant here, <a href="{{ root }}claim/">send a claim</a> with a page on your site that states you do contract manufacturing or private-label packing.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

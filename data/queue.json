@@ -1,0 +1,305 @@
+{
+  "description": "Nightly publish queue. Each item is a pre-written, sourced guide. The nightly script publishes one unpublished item and rebuilds the site.",
+  "items": [
+    {
+      "id": 1,
+      "slug": "oklahoma-copackers-in-this-directory",
+      "title": "Oklahoma co-packers in this directory",
+      "kicker": "State notes",
+      "description": "A tour of the Oklahoma plants OpenCopack has verified so far, and what their public pages actually say.",
+      "body": "<p>Oklahoma was a priority for this directory because a competing public list had little coverage there. In this release we verified six plants from their own websites \u2014 not from a state agriculture co-packer spreadsheet, which we did not find.</p>\n<p>See the living list on the <a href=\"../../states/ok/\">Oklahoma hub</a>. As of the seed build, the public pages we cited include Griffin Food Company in Muskogee (liquid and semi-solid private label, with SQF, OU Kosher, and USDA Organic mentioned on its private-label page), OWS Foods in Ponca City (a GFSI-certified sauce facility), Bakery Avenue in Tulsa (bakery and savory co-packing), Walke Brothers in Claremore (meat private label and co-packing), Firefly Brew in Tulsa (kombucha co-packing), and Focused Fluids in Oklahoma City (beverages, with a published minimum of 5,000 units).</p>\n<p>None of those pages are a substitute for a call. We did not list companies whose public sites we could not load.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 2,
+      "slug": "rhode-island-beverage-copacking",
+      "title": "Rhode Island beverage co-packing: what we verified",
+      "kicker": "State notes",
+      "description": "Palate Pack in Lincoln is the one Rhode Island co-packer we have verified so far, and what its public site does and does not say about minimums.",
+      "body": "<p>Rhode Island is another state a competing directory had left thin. So far OpenCopack has one verified listing: <a href=\"../../plants/palate-pack-lincoln-ri/\">Palate Pack</a> in Lincoln, whose website describes beverage co-packing, canning, glass bottling, private-label programs for restaurant and hospitality groups, and ship-in repacking.</p>\n<p>On minimums, the site says production programs are built around full runs. It did not publish a numeric MOQ in the text we captured, so our listing leaves the minimum blank rather than invent one.</p>\n<p>If you run another Rhode Island plant that publicly offers contract packing, <a href=\"../../claim/\">send a claim</a> with the URL that says so. The <a href=\"../../states/ri/\">state hub</a> will update when we can verify it.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 3,
+      "slug": "why-wyoming-and-dc-are-empty",
+      "title": "Why Wyoming and Washington, D.C. are empty on OpenCopack",
+      "kicker": "State notes",
+      "description": "We created state hubs for Wyoming and D.C. anyway. Here is why they have no listings yet.",
+      "body": "<p>OpenCopack publishes a hub for Wyoming and for Washington, D.C. even though both currently have zero verified plants. That is deliberate. A competing directory had little or no coverage in those places, and an empty page is more honest than a guessed one.</p>\n<p>In this research pass we looked at public pages that might have been contract packers. We did not add a company unless the page itself said it offers co-packing, private label, or contract manufacturing for other brands. A bottler that only describes its own brands, or a USDA organic handler that never mentions packing for others, is not enough.</p>\n<p>If you operate a licensed plant in <a href=\"../../states/wy/\">Wyoming</a> or <a href=\"../../states/dc/\">Washington, D.C.</a> and your site already says you pack for other brands, please <a href=\"../../claim/\">claim a listing</a>.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 4,
+      "slug": "south-dakota-copackers-in-this-directory",
+      "title": "South Dakota co-packers in this directory",
+      "kicker": "State notes",
+      "description": "What Grand Prairie Foods in Sioux Falls publishes about private label and co-manufacturing, and what we have not yet verified elsewhere in the state.",
+      "body": "<p>South Dakota currently has one verified listing on OpenCopack: <a href=\"../../plants/grand-prairie-foods-sioux-falls-sd/\">Grand Prairie Foods</a> in Sioux Falls. Its private-label page describes private label and co-manufacturing, in-house R&amp;D, SQF Level 3, USDA inspection, FDA registration, and nut-free facilities, and it names product platforms such as breakfast sandwiches.</p>\n<p>We attempted to load at least one other South Dakota company that is sometimes mentioned as a grain bagger; the public site did not load in this pass, so it is not listed. See the <a href=\"../../states/sd/\">South Dakota hub</a> for the current set.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 5,
+      "slug": "acidified-foods-and-scheduled-processes",
+      "title": "Acidified foods and scheduled processes, in plain language",
+      "kicker": "Food safety",
+      "description": "Why many sauces need a process authority before a co-packer will run them, and where founders usually start.",
+      "body": "<p>If your product is a salsa, hot sauce, dressing, or similar shelf-stable sauce, there is a good chance it is an <em>acidified food</em> under FDA rules. Plants that pack those products typically want a scheduled process reviewed by a qualified process authority before they will put your recipe on a line.</p>\n<p>OpenCopack is not a process authority and this page is not a legal determination of your product. University programs such as the Cornell Food Venture Center, and the Association of Food and Drug Officials\u2019 process authority directory, are the usual starting points. Your state extension can often tell you who serves your region.</p>\n<p>When you brief a plant, say whether you already have that letter. It is one of the first questions a careful co-packer will ask. See <a href=\"../how-to-brief-a-copacker/\">how to brief a co-packer</a>.</p>\n<p>Source for further reading: Cornell Food Venture Center, and AFDO\u2019s Food Processing Authority directory at <a href=\"https://www.afdo.org/directories/fpa/\">afdo.org/directories/fpa</a>.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 6,
+      "slug": "hot-fill-versus-cold-fill",
+      "title": "Hot-fill versus cold-fill, for founders choosing a plant",
+      "kicker": "Process",
+      "description": "A short explanation of two common sauce and beverage packing methods, and why you should not assume a plant does both.",
+      "body": "<p>Hot-fill and cold-fill are two different ways of getting a liquid product into a package. In a typical hot-fill, the product is packed while hot so that the heat helps with commercial sterility in the container. Cold-fill packs a cooler product and may rely on other controls (including refrigeration, preservatives, or a different process). The right method depends on the recipe, the pH, the package, and the scheduled process \u2014 not on which phrase sounds more artisanal.</p>\n<p>Some public plant listings mention hot-fill, cold-fill, or both. Many do not. If our listing does not say, do not infer it from the fact that the plant packs \u201csauces.\u201d Ask, and be prepared to share process-authority documents.</p>\n<p>This page does not tell you which method your product needs. That is a process-authority question.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 7,
+      "slug": "what-organic-on-a-listing-means",
+      "title": "What \u201corganic\u201d on a listing actually means",
+      "kicker": "Certifications",
+      "description": "A plant page that mentions organic is not the same as a guarantee your recipe can be packed as certified organic.",
+      "body": "<p>When an OpenCopack listing shows a certification such as \u201cUSDA Organic\u201d or \u201cOrganic,\u201d it means the <em>source we cited</em> used that word \u2014 for example, a company private-label page that says it has USDA Organic production certification, or a state directory note that a plant is organic certified.</p>\n<p>It does not automatically mean:</p>\n<ul><li>the plant will take your organic recipe on the date you need,</li><li>every line in the building is organic,</li><li>or your finished product will be certified without your own organic handling plan and certifier.</li></ul>\n<p>If organic is a requirement, say so in the first brief and ask which certifier they work with and whether your run would be on a dedicated or cleaned organic line. We only flag what the source published; we do not audit certificates.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 8,
+      "slug": "reading-sqf-and-gfsi-mentions",
+      "title": "Reading SQF and GFSI mentions on a plant page",
+      "kicker": "Certifications",
+      "description": "What it means when a public source mentions SQF or GFSI, and what you should still ask the plant.",
+      "body": "<p>SQF (Safe Quality Food) is a GFSI-recognized food-safety certification scheme used by many U.S. manufacturers. When a plant\u2019s public page or an official directory mentions SQF or GFSI, we surface that as a certification mention. We do not record a level (for example SQF Level 3) unless the source stated it, as Grand Prairie Foods does on its private-label page.</p>\n<p>A mention is a starting point for a retailer or distributor conversation, not a substitute for asking to see the current certificate, the last audit date, and how allergens are controlled on the line you would use.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 9,
+      "slug": "beverage-copacking-cans-and-glass",
+      "title": "Beverage co-packing: cans, glass, and what to ask",
+      "kicker": "Process",
+      "description": "A short list of questions for beverage founders, tied to what plants in this directory have published about format.",
+      "body": "<p>Beverage co-packing is format-specific. A kombucha canner, a coffee roaster that bags whole bean, a spirit bottler, and a hot-fill juice plant are not interchangeable. Start with the <a href=\"../../processes/beverages/\">beverages hub</a>, then read each plant\u2019s source.</p>\n<p>Questions worth asking early:</p><ul><li>Which formats (can, glass, PET, pouch, keg) and sizes are actually on the floor?</li><li>Is there a published or quoted minimum in units, cases, or hours of filling?</li><li>Can they source cans or glass, or must you supply them?</li><li>Do they pack alcoholic and non-alcoholic products, or only one?</li><li>Who holds the scheduled process or formula, if one is required?</li></ul>\n<p>Palate Pack in Rhode Island, Firefly Brew and Focused Fluids in Oklahoma, and several Minnesota coffee and mixer plants are examples in this seed; each page cites what that company or official list actually published.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 10,
+      "slug": "dry-mix-and-stick-pack-copackers",
+      "title": "Dry mixes, spices, and stick packs in this directory",
+      "kicker": "Process",
+      "description": "Where to look in OpenCopack if you need blending, pouches, or stick packs rather than a sauce kettle.",
+      "body": "<p>Dry products use different equipment than sauces. Look first at the <a href=\"../../processes/dry-mixes/\">dry mixes, spices, and grains</a> hub, and at Utah plants such as Propeller Co-Pack and KeyStone Co-Pack whose official or company pages mention blending, stick packs, or pouches.</p>\n<p>Published minima for dry products are often in pounds, not gallons \u2014 for example Minnesota listings that state \u201c150 pounds custom seasoning or dry blends\u201d or \u201c100 pounds.\u201d Convert your recipe to the unit the plant uses before you decide it is too big or too small. See <a href=\"../what-a-minimum-run-means/\">what a minimum run means</a>.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 11,
+      "slug": "snack-copacking-basics",
+      "title": "Snack co-packing basics",
+      "kicker": "Process",
+      "description": "How snack packing differs from sauce packing, and which OpenCopack categories to start with.",
+      "body": "<p>Snack packing may involve roasting, frying, enrobing, bar forming, bagging, or simple hand-pack, depending on the product. A sauce kettle plant will not necessarily run a trail mix. Start with the <a href=\"../../processes/snacks/\">snacks and confections</a> hub and read the source line on each card.</p>\n<p>Examples in this seed include Snack Connector in Salt Lake City (its site describes snack contract manufacturing) and several Minnesota listings for candy, trail mixes, or corn snacks. If your snack is a baked bar or cookie, also check <a href=\"../../processes/baked-goods/\">baked goods</a>.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 12,
+      "slug": "how-official-directories-differ",
+      "title": "How the official state directories differ",
+      "kicker": "Methodology",
+      "description": "Colorado publishes a spreadsheet with minimum runs. Utah\u2019s table omitted names. Minnesota publishes a narrative minimum on many plants. Here is how OpenCopack used each.",
+      "body": "<p>This directory\u2019s seed is strongest where a state agency already did the hard work of asking plants to describe themselves.</p>\n<ul><li><strong>Colorado</strong> \u2014 a Department of Agriculture spreadsheet, linked from the official co-pack directory page, with an operation type, product types, and often a \u201cminimum run.\u201d We used only rows marked \u201cCo Packer\u201d that included a city and either products or a minimum.</li><li><strong>Utah</strong> \u2014 an official HTML table of websites, addresses, product categories, and services. The published table did not include business names, so we added a name only after reading it on the company\u2019s own site.</li><li><strong>Minnesota</strong> \u2014 a Department of Agriculture web directory with a location table plus, for many plants, a written \u201cMinimum order\u201d line. We included a curated subset, not every plant on the MDA page.</li></ul>\n<p>Details and links are on the <a href=\"../../sources/\">sources</a> page. We did not scrape competing commercial directories and republish them.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 13,
+      "slug": "allergens-and-shared-lines",
+      "title": "Questions to ask about allergens and shared lines",
+      "kicker": "Food safety",
+      "description": "A practical list of allergen questions to ask a co-packer, especially when a listing mentions nut-free or gluten-free language.",
+      "body": "<p>A public mention of \u201cgluten-free\u201d or \u201cnut-free\u201d is useful and, on this site, only appears when a source said it. It is not a full allergen control plan.</p>\n<p>Ask at least:</p><ul><li>Which major allergens are in the facility?</li><li>Would your product run on a dedicated line, a cleaned shared line, or a line that also runs your allergen of concern?</li><li>How is changeover documented, and can you see it?</li><li>Do they offer allergen testing of the first or last units of a run?</li></ul>\n<p>Sturdiwheat\u2019s MDA listing, for example, states it is organic certified and does not run nuts through its system. Grand Prairie Foods\u2019 site mentions nut-free facilities. Those sentences are starting points, not certificates for your SKU.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 14,
+      "slug": "who-buys-the-packaging",
+      "title": "Who buys the bottles, pouches, and labels?",
+      "kicker": "Money and scale",
+      "description": "Packaging supply is one of the first commercial questions in a co-pack relationship, and public listings rarely settle it.",
+      "body": "<p>Most official directories in this seed do not say who purchases packaging. A few company pages mention labeling or fulfillment, but that is not the same as \u201cwe will source your glass.\u201d</p>\n<p>Ask, in the first or second conversation:</p><ul><li>Must you supply bottles, cans, pouches, caps, scoops, and cartons, or can the plant buy them?</li><li>What are the lead times on those components?</li><li>Who buys and stores labels, and how are label changes billed?</li><li>Is there a case or pallet configuration the warehouse already uses?</li></ul>\n<p>Utah\u2019s official \u201chow to choose a co-packer\u201d questions and Colorado\u2019s co-packing checklist both treat packaging supply as a core due-diligence item. Bring the question rather than assuming it is included in a unit price.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 15,
+      "slug": "kitchen-rental-versus-copacker",
+      "title": "Shared kitchen versus co-packer",
+      "kicker": "Getting started",
+      "description": "Why a commissary or shared kitchen is not the same as a co-packer, and when founders usually need each.",
+      "body": "<p>A shared or commissary kitchen is licensed space you (or your staff) cook in, often by the hour or membership. A co-packer is a plant that manufactures and packs your recipe with its own people and equipment. Founders sometimes use a kitchen first, then move to a co-packer when they cannot physically make enough product, or when a buyer requires a certified plant.</p>\n<p>OpenCopack is a co-packer directory. We left shared-kitchen rows out of the Colorado sheet (for example, kitchen-share businesses) even when a row was mis-tagged. If you still need a kitchen, official and commercial kitchen directories exist separately; they are a different search.</p>\n<p>See <a href=\"../how-to-find-a-copacker-for-small-batch-sauce/\">how to find a co-packer for a small-batch sauce</a> for the point at which a plant, not a rented stove, is usually the next step.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 16,
+      "slug": "small-run-language-decoded",
+      "title": "Small-run language, decoded",
+      "kicker": "Money and scale",
+      "description": "What it means when a source says \u201cshort runs are welcome,\u201d \u201cnegotiable,\u201d or \u201cno minimum,\u201d and how OpenCopack flags it.",
+      "body": "<p>OpenCopack marks a plant as having \u201csmall-run language\u201d only when the cited source used words such as startup, small business, small-batch, short runs, no minimum, trial runs, or negotiable. The filter on the home page uses that flag.</p>\n<p>Those phrases are not a published number. \u201cNegotiable\u201d still requires a conversation. \u201cNo minimum on stock items\u201d may not apply to a custom recipe. \u201cShort runs are welcome\u201d may still mean a full kettle.</p>\n<p>Use the flag to decide who to call first, then confirm the actual first-run size in writing. More context is in <a href=\"../what-a-minimum-run-means/\">what a minimum run means</a>.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 17,
+      "slug": "private-label-vs-copacking-vs-comanufacturing",
+      "title": "Private label, co-packing, and co-manufacturing",
+      "kicker": "Getting started",
+      "description": "The three phrases plants use, and how this directory treats them.",
+      "body": "<p>People use these terms loosely, including plants themselves.</p>\n<ul><li><strong>Co-packing</strong> usually means a plant packs your recipe, often to your specifications, in its facility.</li><li><strong>Co-manufacturing</strong> often implies more process work \u2014 cooking, blending, or formulating \u2014 not just filling.</li><li><strong>Private label</strong> often means you put your brand on a product the plant already knows how to make, sometimes from a \u201cplatform\u201d recipe, though some plants also use the phrase for custom recipes.</li></ul>\n<p>If a public page used any of those phrases for contract work, we treated it as in-scope for this directory. When you call, ask which of the three they mean, who owns the formula, and whether you can run a recipe that is not already in their library.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 18,
+      "slug": "what-to-bring-to-a-plant-visit",
+      "title": "What to bring to a co-packer visit",
+      "kicker": "Outreach",
+      "description": "A simple visit list: product, paperwork, and the questions official checklists already tell founders to ask.",
+      "body": "<p>If a plant invites you to walk the floor, go. Official checklists from state directories emphasize seeing whether the facility looks maintained, whether quality procedures are actually followed, and whether you would be allowed on site during a run.</p>\n<p>Bring:</p><ul><li>The one-page brief from <a href=\"../how-to-brief-a-copacker/\">how to brief a co-packer</a>.</li><li>Samples, a draft label, and any process-authority letter.</li><li>A short list of allergens and certifications you must have.</li><li>Questions about confidentiality, who buys ingredients, and what happens if the plant is sold or loses a large client \u2014 all of which appear on the Utah official question list.</li></ul>\n<p>Take notes the same day. Memory of a noisy production floor fades quickly.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 19,
+      "slug": "lead-times-and-being-booked-out",
+      "title": "Lead times and plants that are booked out",
+      "kicker": "Outreach",
+      "description": "Capacity is a recurring complaint in public founder threads. How to ask about it without a published calendar.",
+      "body": "<p>Public directories almost never publish a live booking calendar. Founder threads about co-packing often describe long waits for a quote, let alone a slot on the line. OpenCopack cannot tell you who has capacity this month.</p>\n<p>Ask, specifically: when is the next open production date for a first run of your size; how far in advance they schedule regular customers; and whether a trial batch can be slotted sooner than a full production run. Write the answer down with the date they said it.</p>\n<p>If a plant will not talk about timing at all, that is also information.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 20,
+      "slug": "how-we-add-a-listing",
+      "title": "How OpenCopack adds or corrects a listing",
+      "kicker": "Methodology",
+      "description": "What we need in order to add a plant, and why a marketing sentence in an email is not enough.",
+      "body": "<p>We add or correct a listing when we can point to a public page \u2014 or to written permission from the plant \u2014 that states the fact. The <a href=\"../../claim/\">claim form</a> asks for the plant name, city and state, a website URL that already says you offer co-packing, and the change you want made.</p>\n<p>We will not invent a minimum or a certification because it would help the page look complete. If you want a minimum published, put it on your site or send it with permission to post. Paid placement is not part of this version of the site.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 21,
+      "slug": "coffee-copackers-in-this-directory",
+      "title": "Coffee co-packers in this directory",
+      "kicker": "Process",
+      "description": "A short index of plants in the seed data whose public sources mention coffee.",
+      "body": "<p>Several listings in this release mention coffee, from roasted whole bean to ready-to-drink. They are not all the same service. A roaster that will do a 50-pound custom batch is a different search from a beverage canner.</p>\n<p>Look at the <a href=\"../../processes/beverages/\">beverages</a> hub and read product-type lines for the word \u201ccoffee.\u201d In the Minnesota Department of Agriculture subset, that includes plants such as European Roasterie (published minimum: 50 pounds per SKU), Coffeewomple (no minimums on stock coffee; about 16 pounds on custom batches), Treehouse Brands / Enlightened Beverage, and NLC Beverage Company. Always reconfirm on a call; those figures were copied from the MDA page as of the retrieval date on each listing.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 22,
+      "slug": "meat-plants-and-inspection-questions",
+      "title": "Meat plants in this directory, and inspection questions",
+      "kicker": "Food safety",
+      "description": "If a listing mentions meat, sausage, or jerky, you still need to ask about inspection and whether the product is for resale.",
+      "body": "<p>A few plants in this seed mention meat products, sausage, jerky, or BBQ meats. That does not tell you whether a given run would be under USDA inspection, a state program, or custom-exempt rules, or whether the finished product can be sold retail.</p>\n<p>Ask the plant which inspection program applies to your product, whether the meat must arrive as a specific type of raw material, and whether they will pack a sauce that contains meat. Do not rely on a directory category alone. The <a href=\"../../processes/meat/\">meat hub</a> is only a filter on words the source published.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 23,
+      "slug": "how-opencopack-categorizes-processes",
+      "title": "How OpenCopack categorizes processes",
+      "kicker": "Methodology",
+      "description": "Categories are inferred from words in the public source, not from a plant interview.",
+      "body": "<p>Each listing can appear in one or more process hubs \u2014 sauces, beverages, snacks, baked goods, dry mixes, and others. The assignment is mechanical: if the official directory or company page said \u201csalsa\u201d or \u201cbeverage bottling,\u201d we infer the matching hub.</p>\n<p>That is why a plant can show up in two hubs, and why a plant that packs sauces but never used the word on a public page might be missing from the sauce list. If we guessed from a photo or from general knowledge, we would be inventing a capability. We would rather be incomplete. Corrections belong on the <a href=\"../../claim/\">claim</a> page, with a URL.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 24,
+      "slug": "checklist-before-you-sign",
+      "title": "A checklist before you sign a co-pack agreement",
+      "kicker": "Outreach",
+      "description": "Non-legal due-diligence questions drawn from official state directory checklists.",
+      "body": "<p>This is not legal advice and it is not a contract template. It restates the kinds of questions official directories already tell founders to ask before they rely on a plant.</p>\n<ul><li>What is the minimum and what units is it in? Is a trial smaller than that possible?</li><li>Who buys ingredients and packaging, and can you inspect those invoices if you are charged for them?</li><li>How is your formula kept confidential from other customers?</li><li>Are you allowed on site during a production run?</li><li>What quality checks are done, and can you see records?</li><li>What happens if the plant is sold, is unionized, or loses a major client?</li><li>How are yield losses measured and billed?</li><li>What is the lead time, and how are late or short deliveries handled?</li></ul>\n<p>The Utah Department of Agriculture\u2019s co-packer page and the Colorado Co-Pack Directory checklist are the public sources for this style of question list.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 25,
+      "slug": "utah-powder-and-sauce-packers",
+      "title": "Utah powder and sauce packers in this directory",
+      "kicker": "State notes",
+      "description": "A guide to the Utah listings compiled from the official UDAF directory and company sites.",
+      "body": "<p>Utah has an official co-packer directory, which is why this seed includes a cluster of plants there. See the <a href=\"../../states/ut/\">Utah hub</a>.</p>\n<p>Broadly, the official table plus company sites describe two clusters: sauce and dressing packing (for example Basic Foods and Cornaby\u2019s) and powder, supplement, or snack packing (for example KeyStone Co-Pack, Propeller Co-Pack, Cpack Manufacturing, CorePack, Snack Connector, and Millcreek Cacao). Those are descriptions of what the sources said, not a ranking.</p>\n<p>The official Utah table did not include business names; we only published a name after it appeared on the company\u2019s website. Rows whose sites did not load, or that listed fulfillment only, were omitted.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 26,
+      "slug": "minnesota-acidified-food-plants",
+      "title": "Minnesota and western Wisconsin acidified-food plants in this directory",
+      "kicker": "State notes",
+      "description": "MDA listings in this seed that mention acidic or acidified canned foods, sauces, or similar, including published minimums where they exist.",
+      "body": "<p>The Minnesota Department of Agriculture directory includes plants in Minnesota and a few just over the border in Wisconsin. In our curated subset, several are explicitly about acidic or acidified canned foods or sauces \u2014 for example TWT Sauce, Croix Valley Foods, Kaye Family Foods, Fischer\u2019s United Supply, Gourmet CoPack, and At Last! Gourmet Foods.</p>\n<p>Where MDA published a minimum, we copied it: Croix Valley Foods, 100 gallons on liquid products and 150 pounds on dry blends; Kaye Family Foods, \u201cno minimums - order what you need\u201d; Gourmet CoPack, 1,000 units; At Last! Gourmet Foods, 1 pallet (1,200 pounds); Fischer\u2019s, 500 pounds. Reconfirm those numbers; they are as MDA published them on the retrieval date shown on each plant page.</p>\n<p>Browse the <a href=\"../../states/mn/\">Minnesota</a> and <a href=\"../../states/wi/\">Wisconsin</a> hubs for the current subset.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 27,
+      "slug": "published-minimums-for-smaller-runs",
+      "title": "Published minimums that may fit a smaller first run",
+      "kicker": "Money and scale",
+      "description": "A way to use the directory\u2019s published-minimum filter, with examples copied from official sources \u2014 not a ranking and not a promise.",
+      "body": "<p>Use the home-page checkbox \u201cOnly plants that published a minimum,\u201d then read the actual text. Whether a number is \u201csmall\u201d depends on your recipe. Fifty gallons of sauce is a different commitment than 50,000 bars.</p>\n<p>Examples of lower published figures in this seed, each copied from an official directory or company page and cited on the listing, include Colorado rows such as 40 or 50 gallons for some sauce plants, 200 pounds at Boulder Sausage, and \u201cNone\u201d where the sheet said so; Minnesota rows such as a 20-pound sausage minimum, 50 pounds of coffee per SKU, 100 pounds at Particle Control, and \u201cno minimums\u201d at Kaye Family Foods; and Focused Fluids\u2019 company-page figure of 5,000 units. Look each one up rather than taking this paragraph as a complete or current price list.</p>\n<p>More context: <a href=\"../what-a-minimum-run-means/\">what a minimum run means</a>.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 28,
+      "slug": "how-to-update-a-stale-listing",
+      "title": "How to update a stale listing",
+      "kicker": "Methodology",
+      "description": "Official directories go out of date. Here is how a plant or a founder can get a fact corrected.",
+      "body": "<p>State directories tell you, in so many words, to contact the plant for the latest information. We agree. If you find a closed plant, a bad phone number, or a minimum that has changed, use the <a href=\"../../claim/\">claim page</a> and, if you can, point to a public URL that supports the correction.</p>\n<p>Until a public inbox is connected, the claim form only prepares a draft. We would rather leave a field blank than overwrite it with an unsourced rumor.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 29,
+      "slug": "colorado-sauce-and-kettle-plants",
+      "title": "Colorado sauce and kettle plants in this directory",
+      "kicker": "State notes",
+      "description": "How to use the Colorado official directory listings for sauces, dressings, and related liquids.",
+      "body": "<p>Colorado\u2019s official co-pack spreadsheet is the single largest source in this seed. If you make a sauce, start with the <a href=\"../../states/co/\">Colorado hub</a> and the <a href=\"../../processes/sauces/\">sauces</a> filter, then read the published minimum on each card.</p>\n<p>Examples of official \u201cminimum run\u201d language on Colorado sauce-related rows include figures such as 40 gallons, 50 gallons, and 100 gallons, and phrases such as \u201cNone\u201d or \u201cShort runs are welcome.\u201d Those are the Department of Agriculture sheet\u2019s words, copied onto the plant pages with a retrieval date. They are not OpenCopack\u2019s quotes, and they can change.</p>",
+      "status": "queued",
+      "published_on": null
+    },
+    {
+      "id": 30,
+      "slug": "supplements-versus-food-on-this-site",
+      "title": "Supplements versus food on this site",
+      "kicker": "Process",
+      "description": "Why some listings mention capsules, gummies, or skincare, and how we decided they still belong.",
+      "body": "<p>OpenCopack is a food and beverage directory, but official lists \u2014 especially Utah\u2019s \u2014 include plants that also pack dietary supplements, stick packs, or even skincare. We included a plant if the official food-and-agriculture directory listed it as a co-packer and it also handles food, beverages, or supplements. We did not create a skincare-only category.</p>\n<p>If you need a supplement contract manufacturer, read the source carefully: a gummy line and a hot-fill sauce line are not the same. The <a href=\"../../processes/supplements/\">supplements</a> hub collects listings whose sources mentioned that work.</p>",
+      "status": "queued",
+      "published_on": null
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">{{ kicker }}</p>
+      <h1>{{ heading }}</h1>
+      <p class="lede">{{ lede }}</p>
+    </header>
+    <div class="grid">
+      {% for item in items %}
+      <a class="card" href="{{ item.href }}">
+        <h2>{{ item.name }}</h2>
+        <p class="meta">{{ item.count }} listing{{ 's' if item.count != 1 else '' }}</p>
+        {% if item.note %}<p class="meta">{{ item.note }}</p>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
