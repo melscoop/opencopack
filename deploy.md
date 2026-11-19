@@ -2,7 +2,9 @@
 
 - Live site: https://melscoop.github.io/opencopack/
 - Repository: https://github.com/melscoop/opencopack
-- GitHub account used: `melscoop` (via the `user-GitHub-xai` connector)
+- GitHub account used: `melscoop`, via the box `gh` CLI (`gh auth setup-git` for the local credential helper)
+
+Pages is enabled on this repo with `build_type=workflow`. A push to `main` runs `.github/workflows/pages.yml`, which rebuilds the site with `SITE_URL=https://melscoop.github.io/opencopack` and deploys it. The same workflow also publishes an orphan `gh-pages` branch from `dist/` (including `.nojekyll`) as a fallback. Prefer the Actions path.
 
 ## What a nightly run changes locally
 
@@ -21,37 +23,45 @@ It does not invent company facts, and it does not push to GitHub by itself.
 
 - `data/queue.json` — item `status` and `published_on`
 - `src/guides/<slug>.json` — new guide source
-- `dist/**` — full rebuild (especially `guides/<slug>/index.html`, `guides/index.html`, `sitemap.xml`, and any index that lists guides)
+- `dist/**` — full rebuild (especially `guides/<slug>/index.html`, `guides/index.html`, `sitemap.xml`, and any index that lists guides). Do not commit `dist/` (gitignored); Actions rebuilds it.
 - `logs/nightly.log` — local only; do not commit (gitignored)
 
-If you later add listings, `data/copackers.json` and many plant/hub pages under `dist/` also change. Run `scripts/compile_data.py` only when you have new sourced data, then `scripts/build.py`.
+If you later add listings, `data/copackers.json` also changes. Run `scripts/compile_data.py` only when you have new sourced data, then `scripts/build.py`.
 
-## How a later run publishes through the connector
+## How a later run publishes (git push via gh)
 
-Use the `user-GitHub-xai` MCP tools as user `melscoop`. Do not create a new repo.
+Stay in `/workspace/mogul/site`. This directory is already a git checkout of `melscoop/opencopack` on `main`. Use the box `gh` login (`melscoop`); `gh auth setup-git` is enough if HTTPS pushes ask for credentials. Do not create a new repo, and do not change other repositories or account settings.
 
-1. **Push the new source to `main`** with `push_files`:
-   - `owner`: `melscoop`
-   - `repo`: `opencopack`
-   - `branch`: `main`
-   - `files`: at least `data/queue.json` and `src/guides/<slug>.json` (path and full text content of each)
-   - `message`: e.g. `Publish guide: <title>`
+```sh
+cd /workspace/mogul/site
+./nightly.sh
+git add data/queue.json src/guides/<slug>.json
+git status   # confirm only the intended source files are staged; no dist/, .venv/, or logs/
+git commit -m "Publish guide: <title>"
+git push origin main
+gh run watch --repo melscoop/opencopack
+```
 
-   For a one-file fix you can use `create_or_update_file` instead, but updates need the current blob `sha` from `get_file_contents`.
+A push to `main` triggers the Pages workflow. You do not need to upload `dist/` for the live site when that run succeeds.
 
-2. **Let GitHub Actions deploy Pages.** A push to `main` runs `.github/workflows/pages.yml`, which rebuilds with `SITE_URL=https://melscoop.github.io/opencopack` and deploys the new `dist/`. You do not need to upload `dist/` for the live site when that workflow succeeds.
+If the Actions deploy fails, the `gh-pages` branch is the fallback (the workflow updates it when it can). Pages can be pointed at `gh-pages` / root for this repo only, for example:
 
-3. **Optional fallback:** the same workflow also publishes an orphan `gh-pages` branch from `dist/` (including `.nojekyll`). If Pages is ever pointed at that branch (root) instead of GitHub Actions, you can also `push_files` to `branch=gh-pages` with the rebuilt site files at the branch root (`index.html`, `guides/<slug>/index.html`, `sitemap.xml`, `.nojekyll`, and so on). Prefer the Actions path.
+```sh
+gh api -X PUT repos/melscoop/opencopack/pages -f build_type=legacy -f source[branch]=gh-pages -f source[path]=/
+```
 
-4. **Verify** with curl that these return HTTP 200 and contain expected titles:
-   - https://melscoop.github.io/opencopack/
-   - https://melscoop.github.io/opencopack/guides/<slug>/
-   - one listing URL under https://melscoop.github.io/opencopack/plants/
+Prefer leaving `build_type=workflow` unless that path is broken.
 
-There is no GitHub Pages enable/update tool in this connector. After the first successful Actions deploy, Pages should stay on with source “GitHub Actions.” If a later deploy fails because Pages was turned off, it has to be turned back on in the repository Pages settings (source: GitHub Actions, or branch `gh-pages` / root).
+Then verify these return HTTP 200 and contain expected titles:
 
-## Status as of 2026-11-19 (Eastern Time)
+- https://melscoop.github.io/opencopack/
+- https://melscoop.github.io/opencopack/guides/<slug>/
+- one listing URL under https://melscoop.github.io/opencopack/plants/
 
-The public `melscoop/opencopack` repository does not exist yet. `create_repository` on the `user-GitHub-xai` connector returned `403 Resource not accessible by integration` for the personal account. The connector can read public `melscoop` repos and can see the `melscoop-test` organization, but this project should go on `melscoop/opencopack` so Pages is `https://melscoop.github.io/opencopack/`.
+If a later deploy fails because Pages was turned off, turn it back on for this repo only:
 
-Once that empty public repo exists (and the connector can write to it), push the source from `/workspace/mogul/site` to `main` as described above, excluding `dist/` and `.venv/`. The workflow in `.github/workflows/pages.yml` builds and deploys Pages. The connector has no Pages-enable tool; the workflow tries `POST /repos/{owner}/{repo}/pages` with `build_type=workflow`, and if that fails Pages must be turned on in the repo settings (source: GitHub Actions, or branch `gh-pages` / root).
+```sh
+gh api -X POST repos/melscoop/opencopack/pages -f build_type=workflow
+```
+
+(Use `PUT` with the same field if the Pages site already exists.)
