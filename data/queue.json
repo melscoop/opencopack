@@ -28,8 +28,8 @@
       "kicker": "State notes",
       "description": "We created state hubs for Wyoming and D.C. anyway. Here is why they have no listings yet.",
       "body": "<p>OpenCopack publishes a hub for Wyoming and for Washington, D.C. even though both currently have zero verified plants. That is deliberate. A competing directory had little or no coverage in those places, and an empty page is more honest than a guessed one.</p>\n<p>In this research pass we looked at public pages that might have been contract packers. We did not add a company unless the page itself said it offers co-packing, private label, or contract manufacturing for other brands. A bottler that only describes its own brands, or a USDA organic handler that never mentions packing for others, is not enough.</p>\n<p>If you operate a licensed plant in <a href=\"../../states/wy/\">Wyoming</a> or <a href=\"../../states/dc/\">Washington, D.C.</a> and your site already says you pack for other brands, please <a href=\"../../claim/\">claim a listing</a>.</p>",
-      "status": "queued",
-      "published_on": null
+      "status": "published",
+      "published_on": "2026-11-21"
     },
     {
       "id": 4,
