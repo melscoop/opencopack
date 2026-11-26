@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 <article class="page">
-  <div class="wrap prose guide">
-    <p class="crumbs"><a href="{{ root }}">Directory</a> · <a href="{{ root }}guides/">Guides</a></p>
-    <p class="kicker">{{ guide.kicker|default('Guide') }}</p>
-    <h1>{{ guide.title }}</h1>
-    {% if guide.updated %}<p class="meta">Updated {{ guide.updated }}</p>{% endif %}
-    {{ guide.body | safe }}
-    <p class="disclaimer">This is general information, not legal, food-safety, or business advice. Confirm process, labeling, and inspection rules with a process authority and the plant.</p>
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ root }}">Directory</a> <span aria-hidden="true">/</span> <a href="{{ root }}guides/">Guides</a></p>
+    <header class="article-head">
+      <p class="kicker">{{ guide.kicker|default('Guide') }}</p>
+      <h1>{{ guide.title }}</h1>
+      {% if guide.description %}<p class="standfirst">{{ guide.description }}</p>{% endif %}
+      <p class="byline"><span>OpenCopack</span>{% if guide.date %}<span>Published <time datetime="{{ guide.date }}">{{ guide.date }}</time></span>{% endif %}{% if guide.updated %}<span>Updated <time datetime="{{ guide.updated }}">{{ guide.updated }}</time></span>{% endif %}</p>
+    </header>
+    <div class="article-body guide">
+      {{ guide.body | safe }}
+      <p class="disclaimer">This is general information, not legal, food-safety, or business advice. Confirm process, labeling, and inspection rules with a process authority and the plant.</p>
+    </div>
   </div>
 </article>
 {% endblock %}

@@ -1,21 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="hero">
-  <div class="wrap">
-    <p class="kicker">A public, sourced directory</p>
-    <h1>Find a co-packer who might actually take your run.</h1>
-    <p class="lede">OpenCopack lists U.S. food and beverage contract manufacturers compiled from state agriculture directories and company websites. If a plant did not publish a minimum, a certification, or a process, we leave it blank rather than guess.</p>
-    <ul class="stats">
-      <li><strong>{{ listings|length }}</strong> <span>verified listings</span></li>
-      <li><strong>{{ state_count }}</strong> <span>states in this seed</span></li>
-      <li><strong>{{ moq_count }}</strong> <span>with a published minimum</span></li>
-    </ul>
+<section class="masthead">
+  <div class="wrap masthead-grid">
+    <div>
+      <p class="kicker">Directory of U.S. contract food manufacturers</p>
+      <h1>Co-packers for food and beverage brands, listed from public sources.</h1>
+      <p class="lede">Search plants by state, process, certification, and published minimum. Every listing links to the state agriculture directory or company page it came from. If a source didn’t publish a minimum or a certification, the field stays blank.</p>
+    </div>
+    <aside class="spec" aria-label="About this data">
+      <p class="spec-title">Directory record</p>
+      <dl>
+        <div><dt>Plants listed</dt><dd>{{ listings|length }}</dd></div>
+        <div><dt>States with listings</dt><dd>{{ state_count }}</dd></div>
+        <div><dt>Published minimum</dt><dd>{{ moq_count }}</dd></div>
+        <div><dt>Data retrieved</dt><dd>{{ generated }}</dd></div>
+        <div><dt>Paid placements</dt><dd>None</dd></div>
+      </dl>
+      <p class="spec-foot"><a href="{{ root }}sources/">How listings are sourced</a></p>
+    </aside>
   </div>
 </section>
 <div class="wrap">
-  <form class="filter-bar" id="filters" role="search" onsubmit="return false;">
+  <form class="filter-bar" id="filters" role="search" aria-label="Filter the directory" onsubmit="return false;">
     <div class="filter-grid">
-      <label class="fld">Search
+      <label class="fld fld-q">Search
         <input type="search" id="q" name="q" placeholder="Name, city, sauce, pouch, organic…">
       </label>
       <label class="fld">State
@@ -45,30 +53,20 @@
     </div>
     <div class="toggles">
       <label><input type="checkbox" id="moq" name="moq"> Only plants that published a minimum</label>
-      <label><input type="checkbox" id="startup" name="startup"> Mentioned startups, small runs, or no minimum</label>
+      <label><input type="checkbox" id="startup" name="startup"> Mentions startups, small runs, or no minimum</label>
     </div>
   </form>
-  <p class="count-line" id="count">{{ listings|length }} plants in the directory</p>
-  <div class="grid" id="results">
-    {% for p in listings %}
-    <a class="card" data-card href="{{ root }}plants/{{ p.slug }}/"
-       data-state="{{ p.state_abbr|lower }}"
-       data-cats="{{ p.categories|join(' ') }}"
-       data-certs="{{ p.certifications|join('|') }}"
-       data-moq="{{ 1 if p.moq_published else 0 }}"
-       data-start="{{ 1 if p.startup_friendly else 0 }}"
-       data-hay="{{ (p.name ~ ' ' ~ p.city ~ ' ' ~ p.state ~ ' ' ~ p.product_types ~ ' ' ~ p.notes ~ ' ' ~ p.processes|join(' ') ~ ' ' ~ p.certifications|join(' '))|lower|e }}">
-      <h2>{{ p.name }}</h2>
-      <p class="meta">{{ p.city }}, {{ p.state_abbr }}</p>
-      {% if p.product_types %}<p class="meta">{{ p.product_types[:140] }}{% if p.product_types|length > 140 %}…{% endif %}</p>{% endif %}
-      <div class="chips">
-        {% for c in p.categories[:3] %}<span class="chip">{{ category_names[c] }}</span>{% endfor %}
-        {% if p.moq_published %}<span class="chip moq">Min. published</span>{% endif %}
-        {% if p.startup_friendly %}<span class="chip start">Small-run language</span>{% endif %}
-      </div>
-    </a>
-    {% endfor %}
-  </div>
+  <p class="count-line" id="count" aria-live="polite">{{ listings|length }} plants in the directory</p>
+  {% set tbody_id = "results" %}{% set filterable = true %}
+  {% include "_plant_table.html" %}
+  <section class="index-strip" aria-labelledby="by-state">
+    <h2 id="by-state" class="section-label">Browse by state</h2>
+    <ul class="index-list">
+      {% for st in states %}
+      <li><a href="{{ root }}states/{{ st.abbr|lower }}/"><span class="mono">{{ st.abbr }}</span> {{ st.name }}</a> <span class="n">{{ st.count }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
   <p class="disclaimer">Seed data retrieved {{ generated }}. See <a href="{{ root }}sources/">how listings are sourced</a>. This first release emphasizes Colorado, Minnesota, Utah, and states that a competing directory had left thin (Oklahoma, Rhode Island, South Dakota). Wyoming and Washington, D.C. are still empty here because we could not yet verify a plant that publicly offers co-packing.</p>
 </div>
 {% endblock %}

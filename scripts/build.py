@@ -103,6 +103,7 @@ def env():
         autoescape=select_autoescape(["html"]),
     )
     jinja.globals["cf_web_analytics_token"] = CF_WEB_ANALYTICS_TOKEN
+    jinja.globals["site_url"] = (SITE_URL or "https://opencopack.com").rstrip("/")
     return jinja
 
 
@@ -367,7 +368,9 @@ def build() -> None:
         kicker="Learn",
         heading="Guides",
         lede="Short pages meant to be useful before you start calling plants. We will add one new useful page at a time.",
-        items=[{"name": g["title"], "count": 1, "href": f"{root_prefix(1)}guides/{g['slug']}/", "note": g.get("kicker", "Guide")} for g in guides],
+        list_style="articles",
+        items=[{"name": g["title"], "count": 1, "href": f"{root_prefix(1)}guides/{g['slug']}/", "note": g.get("kicker", "Guide"),
+                "date": g.get("updated") or g.get("date"), "description": g.get("description", "")} for g in guides],
     )
     write(DIST / "guides" / "index.html", guides_index)
 
