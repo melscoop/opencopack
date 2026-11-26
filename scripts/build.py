@@ -19,6 +19,27 @@ SITE_URL = os.environ.get("SITE_URL", "https://opencopack.com")
 REPO_URL = os.environ.get("REPO_URL", "https://github.com/melscoop/opencopack")
 CLAIM_ISSUE_URL = f"{REPO_URL.rstrip('/')}/issues/new?template=claim.yml"
 
+# Public Cloudflare Web Analytics beacon token (not a password). The build
+# omits the script if this is empty. Override with the env var of the same name.
+CF_WEB_ANALYTICS_TOKEN = os.environ.get("CF_WEB_ANALYTICS_TOKEN", "a31146b16cb243f381d57d9a0b918d20")
+
+# Internal hop pages so Web Analytics can count affiliate clicks as pageviews.
+# Partner destinations live only on these pages; guides link to /go/<slug>/.
+AFFILIATE_HOPS = [
+    {
+        "slug": "recipal",
+        "name": "ReciPal",
+        "destination": "https://www.recipal.com?via=melanie",
+        "description": "Continue to ReciPal. This is an affiliate link; OpenCopack may earn a commission if you sign up.",
+    },
+    {
+        "slug": "shipbob",
+        "name": "ShipBob",
+        "destination": "https://partnerwith.shipbob.com/z8mh90veiuzz",
+        "description": "Continue to ShipBob. This is an affiliate link; OpenCopack may earn a commission if you sign up.",
+    },
+]
+
 CATEGORY_NAMES = {
     "sauces": "Sauces & condiments",
     "beverages": "Beverages",
@@ -77,10 +98,12 @@ def load_data():
 
 
 def env():
-    return Environment(
+    jinja = Environment(
         loader=FileSystemLoader(str(ROOT / "templates")),
         autoescape=select_autoescape(["html"]),
     )
+    jinja.globals["cf_web_analytics_token"] = CF_WEB_ANALYTICS_TOKEN
+    return jinja
 
 
 def write(path: Path, text: str) -> None:
@@ -423,8 +446,24 @@ def build() -> None:
         body=sources_body,
     ))
 
+    # Affiliate hop pages (not in the sitemap; noindex). A 1s meta-refresh
+    # gives the Web Analytics beacon time to record the pageview as a click.
+    for hop in AFFILIATE_HOPS:
+        write(
+            DIST / "go" / hop["slug"] / "index.html",
+            jinja.get_template("go.html").render(
+                title=f"Continue to {hop['name']} — OpenCopack",
+                description=hop["description"],
+                canonical=canon(f"go/{hop['slug']}/"),
+                nav="",
+                root=root_prefix(2),
+                partner_name=hop["name"],
+                destination=hop["destination"],
+            ),
+        )
+
     # robots + sitemap
-    write(DIST / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {canon('sitemap.xml')}\n")
+    write(DIST / "robots.txt", f"User-agent: *\nAllow: /\nDisallow: /go/\nSitemap: {canon('sitemap.xml')}\n")
     (DIST / ".nojekyll").write_text("")
     write(DIST / "CNAME", "opencopack.com")
     urls = [""]

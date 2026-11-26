@@ -74,3 +74,11 @@ gh api -X POST repos/melscoop/opencopack/pages -f build_type=workflow -f cname='
 ```sh
 gh api -X PUT repos/melscoop/opencopack/pages -f build_type=workflow -f cname='opencopack.com' -F https_enforced=true
 ```
+
+## Analytics
+
+Visit and affiliate-click tracking is documented in `/workspace/mogul/analytics.md` (a copy of the same notes lives next to this file as `analytics.md` once published).
+
+The Cloudflare Web Analytics beacon is added to `templates/base.html` when `CF_WEB_ANALYTICS_TOKEN` is set in `scripts/build.py`. Affiliate links go through `/go/recipal/` and `/go/shipbob/`, which meta-refresh to the partner URLs after one second so those pageviews can be counted as clicks. Those paths are noindex, omitted from the sitemap, and disallowed in `robots.txt`.
+
+The Monday money report should query `rumPageloadEventsAdaptiveGroups` for the last 7 days: site `sum.visits` / `count`, plus `count` for `requestPath` `/go/recipal/` and `/go/shipbob/`, with `bot: 0`. Prefer the `user-Cloudflare` connector. Search Console remains the fallback if that API is unavailable. See `/workspace/mogul/analytics.md` for the full GraphQL query.

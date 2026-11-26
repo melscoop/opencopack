@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %}
+  <meta name="robots" content="noindex,follow">
+  <meta http-equiv="refresh" content="1;url={{ destination }}">
+{% endblock %}
+{% block content %}
+<article class="page">
+  <div class="wrap prose">
+    <p class="kicker">Affiliate link</p>
+    <h1>Continue to {{ partner_name }}</h1>
+    <p>You are leaving OpenCopack to open {{ partner_name }}. This is an affiliate link; OpenCopack may earn a commission if you sign up through it.</p>
+    <p><a class="btn" href="{{ destination }}" rel="sponsored noopener">Continue to {{ partner_name }}</a></p>
+    <p class="note">If you are not redirected in a moment, use the link above.</p>
+  </div>
+</article>
+{% endblock %}
