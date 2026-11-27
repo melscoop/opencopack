@@ -78,8 +78,8 @@
       "kicker": "Process",
       "description": "A short explanation of two common sauce and beverage packing methods, and why you should not assume a plant does both.",
       "body": "<p>Hot-fill and cold-fill are two different ways of getting a liquid product into a package. In a typical hot-fill, the product is packed while hot so that the heat helps with commercial sterility in the container. Cold-fill packs a cooler product and may rely on other controls (including refrigeration, preservatives, or a different process). The right method depends on the recipe, the pH, the package, and the scheduled process — not on which phrase sounds more artisanal.</p>\n<p>Some public plant listings mention hot-fill, cold-fill, or both. Many do not. If our listing does not say, do not infer it from the fact that the plant packs “sauces.” Ask, and be prepared to share process-authority documents.</p>\n<p>This page does not tell you which method your product needs. That is a process-authority question.</p>",
-      "status": "queued",
-      "published_on": null
+      "status": "published",
+      "published_on": "2026-11-26"
     },
     {
       "id": 7,
