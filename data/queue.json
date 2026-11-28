@@ -88,8 +88,8 @@
       "kicker": "Certifications",
       "description": "A plant page that mentions organic is not the same as a guarantee your recipe can be packed as certified organic.",
       "body": "<p>When an OpenCopack listing shows a certification such as “USDA Organic” or “Organic,” it means the <em>source we cited</em> used that word — for example, a company private-label page that says it has USDA Organic production certification, or a state directory note that a plant is organic certified.</p>\n<p>It does not automatically mean:</p>\n<ul><li>the plant will take your organic recipe on the date you need,</li><li>every line in the building is organic,</li><li>or your finished product will be certified without your own organic handling plan and certifier.</li></ul>\n<p>If organic is a requirement, say so in the first brief and ask which certifier they work with and whether your run would be on a dedicated or cleaned organic line. We only flag what the source published; we do not audit certificates.</p>",
-      "status": "queued",
-      "published_on": null
+      "status": "published",
+      "published_on": "2026-11-27"
     },
     {
       "id": 8,
